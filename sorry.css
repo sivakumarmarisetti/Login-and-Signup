@@ -1,0 +1,36 @@
+.responsive {
+  max-width: 100%;
+  height: auto;
+}
+.btn{
+  position: absolute;
+  top:50px;
+  right: 100px;
+  box-sizing: border-box;
+  padding: 15px 32px;
+  background: #33cc33;
+  opacity: 0.7;
+  border-radius: 20px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Tangerine';
+  transition: 0.3s;
+  }
+  @media only screen and (max-width:910px) {
+    .btn{
+      position: static;
+      bottom:50px;
+      right: 100px;
+      box-sizing: border-box;
+      padding: 15px 32px;
+      background: #33cc33;
+      opacity: 0.7;
+      border-radius: 20px;
+      font-size: 20px;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Tangerine';
+      transition: 0.3s;
+    }
+  }

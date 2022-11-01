@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register form</title>
+<link rel ="stylesheet" href ="register.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style media = "screen">
+input::-webkit-inner-spin-button,
+ input::-webkit-outer-spin-button{
+   -webkit-appearance:none;
+ }
+ input[type="number"]{
+   -moz-appearance:textfield;
+ }
+</style>
+</head>
+<body>
+<div class ="wrap">
+  <h2> Register </h2>
+    <form name="myform" method="POST" onsubmit="return validation()" action="insert.php">
+  <input type ="text" placeholder ="Username" name="username" pattern="[a-zA-Z ]{2,20}" title="name must contains alphabets only">
+  <input type ="password" placeholder ="password" name="pass1">
+  <input type ="password" placeholder ="confirm password" name="pass2">
+  <input type ="text" placeholder ="email" name="email1">
+  <input type ="number" placeholder ="Mobile No" name="mobile1">
+  <input class="btn" type ="submit" value ="Submit">
+    </form>
+    </div>
+  <script>
+      function validation(){
+        var user = document.myform.username.value;
+        var password = document.myform.pass1.value;
+        var cpassword = document.myform.pass2.value;
+        var email2 = document.myform.email1.value;
+        var atposition=email2.indexOf("@");
+        var dotposition=email2.lastIndexOf(".");
+        var mobile2=document.myform.mobile1.value;
+        if(user==null || user==""){
+        alert("please enter valid name");
+          return false;
+        }
+        if(atposition<1 || dotposition<atposition+2 || dotposition+2>= email2.length){
+          alert("please enter valid email");
+          return false;
+        }
+        if(password.length<8){
+          alert("password must contain 8 characters");
+          return false;
+        }
+        if(mobile2.length<10 || mobile2.length>10){
+          alert("Enter 10 digit mobile number")
+          return false;
+        }
+        if(password==cpassword){
+          return true;
+        }else{
+          alert("password doesnt match");
+          return false;
+        }
+      }
+      </script>
+  </body>
+  </html>
